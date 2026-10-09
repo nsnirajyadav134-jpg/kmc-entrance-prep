@@ -2,45 +2,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMC Entrance Preparation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f0f5ff;
-      margin: 0;
-      padding: 30px 15px;
-    }
-    h1 { color: #174ea6; }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: 25px auto;
-    }
-    button {
-      background: #174ea6;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KMC Entrance Prep</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef4ff;
+  color: #172554;
+}
+header {
+  background: #123c80;
+  color: white;
+  text-align: center;
+  padding: 25px 12px;
+}
+main {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 12px;
+}
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #ccd5e5;
+}
+button {
+  background: #1458b5;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 18px;
+  margin: 5px 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover { background: #0b3475; }
+.subject-btn { width: 100%; margin: 7px 0; }
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #e7efff;
+  color: #172554;
+}
+.option:hover { background: #cbdcff; }
+.hidden { display: none !important; }
+#feedback { font-weight: bold; }
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #475569;
+}
+</style>
 </head>
 <body>
-  <h1>KMC Entrance Preparation</h1>
-  <div class="card">
-    <h2>Welcome, Students!</h2>
-    <p>Prepare for your entrance exam with daily practice.</p>
-    <p>Learn, practise, and achieve your goals.</p>
-    <button onclick="alert('Your entrance preparation starts today!')">
-      Start Preparation
-    </button>
-  </div>
+
+<header>
+  <h1>KMC Entrance Prep</h1>
+  <p>Your entrance preparation starts today!</p>
+</header>
+
+<main>
+  <section id="home" class="card">
+    <h2>Welcome, Future Scholar!</h2>
+    <p>Prepare for your entrance exam with practice MCQs.</p>
+    <button onclick="showSubjects()">Start Preparation</button>
+  </section>
+
+  <section id="subjects" class="card hidden">
+    <h2>Choose Your Subject</h2>
+    <button class="subject-btn" onclick="startQuiz('Science')">Science</button>
+    <button class="subject-btn" onclick="startQuiz('Mathematics')">Mathematics</button>
+    <button class="subject-btn" onclick="startQuiz('English')">English</button>
+    <button class="subject-btn" onclick="startQuiz('IQ')">IQ & Reasoning</button>
+    <button onclick="goHome()">Home</button>
+  </section>
+
+  <section id="quiz" class="card hidden">
+    <p id="progress"></p>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="feedback"></p>
+    <button id="next" class="hidden" onclick="nextQuestion()">Next Question</button>
+    <button onclick="showSubjects()">Change Subject</button>
+  </section>
+
+  <section id="results" class="card hidden">
+    <h2>Test Completed!</h2>
+    <p id="score"></p>
+    <button onclick="startQuiz(subject)">Try Again</button>
+    <button onclick="showSubjects()">Choose Subject</button>
+    <button onclick="goHome()">Home</button>
+  </section>
+</main>
+
+<footer>
+  KMC Entrance Prep | Learn • Practise • Improve
+</footer>
+
+<script>
+const bank = {
+  Science: [
+    {q:"What is the basic unit of life?",o:["Atom","Cell","Tissue","Organ"],a:1},
+    {q:"Which gas do plants absorb during photosynthesis?",o:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],a:2},
+    {q:"What is the SI unit of force?",o:["Joule","Watt","Newton","Pascal"],a:2},
+    {q:"Which organ pumps blood around the body?",o:["Lungs","Heart","Kidney","Liver"],a:1},
+    {q:"What is the chemical formula of water?",o:["CO2","O2","H2O","NaCl"],a:2}
+  ],
+  Mathematics: [
+    {q:"What is 12 × 8?",o:["84","96","88","108"],a:1},
+    {q:"What is the square root of 144?",o:["10","11","12","14"],a:2},
+    {q:"What is 25% of 200?",o:["25","40","50","75"],a:2},
+    {q:"The sum of the angles of a triangle is:",o:["90°","180°","270°","360°"],a:1},
+    {q:"If x + 5 = 12, what is x?",o:["5","6","7","8"],a:2}
+  ],
+  English: [
+    {q:"Choose the plural of 'child'.",o:["Childs","Children","Childes","Childrens"],a:1},
+    {q:"Choose the synonym of 'rapid'.",o:["Slow","Fast","Weak","Late"],a:1},
+    {q:"She ___ to school every day.",o:["go","going","goes","gone"],a:2},
+    {q:"What is the opposite of 'ancient'?",o:["Old","Historic","Modern","Past"],a:2},
+    {q:"Choose the correct article: ___ apple.",o:["A","An","Thee","No article"],a:1}
+  ],
+  IQ: [
+    {q:"Find the next number: 2, 4, 6, 8, __",o:["9","10","12","14"],a:1},
+    {q:"Which one is different?",o:["Apple","Mango","Carrot","Banana"],a:2},
+    {q:"If today is Monday, what day is tomorrow?",o:["Sunday","Tuesday","Wednesday","Friday"],a:1},
+    {q:"How many sides does a hexagon have?",o:["5","6","7","8"],a:1},
+    {q:"Find the next number: 5, 10, 15, 20, __",o:["22","24","25","30"],a:2}
+  ]
+};
+
+let subject = "";
+let questions = [];
+let index = 0;
+let marks = 0;
+let answered = false;
+
+function hideAll() {
+  ["home","subjects","quiz","results"].forEach(id => {
+    document.getElementById(id).classList.add("hidden");
+  });
+}
+
+function goHome() {
+  hideAll();
+  document.getElementById("home").classList.remove("hidden");
+}
+
+function showSubjects() {
+  hideAll();
+  document.getElementById("subjects").classList.remove("hidden");
+}
+
+function startQuiz(selectedSubject) {
+  subject = selectedSubject;
+  questions = bank[subject];
+  index = 0;
+  marks = 0;
+  hideAll();
+  document.getElementById("quiz").classList.remove("hidden");
+  showQuestion();
+}
+
+function showQuestion() {
+  answered = false;
+  const q = questions[index];
+
+  document.getElementById("progress").textContent =
+    subject + " | Question " + (index + 1) + " of " + questions.length;
+
+  document.getElementById("question").textContent = q.q;
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("next").classList.add("hidden");
+
+  const options = document.getElementById("options");
+  options.innerHTML = "";
+
+  q.o.forEach((option, i) => {
+    const button = document.createElement("button");
+    button.className = "option";
+    button.textContent = String.fromCharCode(65 + i) + ". " + option;
+    button.onclick = () => checkAnswer(i);
+    options.appendChild(button);
+  });
+}
+
+function checkAnswer(selected) {
+  if (answered) return;
+  answered = true;
+
+  const q = questions[index];
+  const buttons = document.querySelectorAll("#options button");
+  buttons.forEach(button => button.disabled = true);
+
+  const feedback = document.getElementById("feedback");
+
+  if (selected === q.a) {
+    marks++;
+    feedback.textContent = "Correct! Well done.";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Incorrect. Correct answer: " + q.o[q.a];
+    feedback.style.color = "crimson";
+  }
+
+  document.getElementById("next").textContent =
+    index === questions.length - 1 ? "View Results" : "Next Question";
+
+  document.getElementById("next").classList.remove("hidden");
+}
+
+function nextQuestion() {
+  if (!answered) return;
+
+  index++;
+
+  if (index < questions.length) {
+    showQuestion();
+  } else {
+    hideAll();
+    document.getElementById("results").classList.remove("hidden");
+    document.getElementById("score").textContent =
+      "Subject: " + subject + " | Your score: " +
+      marks + " out of " + questions.length +
+      " (" + Math.round(marks / questions.length * 100) + "%)";
+  }
+}
+</script>
+
 </body>
-</html>
+      </html>
+  
 
