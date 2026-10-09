@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KMC Entrance Prep | Created by Niraj Yadav</title>
+<style>
+:root{--bg:#f2f5ff;--card:#fff;--ink:#20234a;--muted:#667085;--line:#dce2f5;--soft:#edf0ff;--black:#5145cd;--purple:#635bff;--pink:#ff5da2;--blue:#3b82f6;--teal:#10b981;--orange:#f59e0b}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f2f5ff 0%,#fff3f8 48%,#effcf8 100%);color:var(--ink);font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer;border:0;background:linear-gradient(135deg,#635bff,#8b5cf6);color:#fff;padding:11px 15px;border-radius:11px;font-weight:800;box-shadow:0 5px 14px #635bff25;transition:transform .15s,filter .15s}
+button:hover{filter:brightness(1.05);transform:translateY(-1px)}button.secondary{background:#fff;color:#5145cd;border:1px solid #d9d5ff;box-shadow:none}button:disabled{opacity:.45;cursor:not-allowed}
+input,select{width:100%;padding:12px;border:1px solid #d4d9ee;border-radius:10px;background:#fff;color:#20234a;margin-top:6px;outline-color:#8b5cf6}
+label{font-size:13px;font-weight:700;display:block;margin:12px 0;color:#454b68}
+.shell{max-width:1000px;margin:auto;padding:18px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid #dce2f5;margin-bottom:20px}
+.brand{font-weight:900;letter-spacing:-.4px;font-size:20px;color:#5145cd}.brand small{display:block;font-size:11px;color:#7a819b;font-weight:600;letter-spacing:.2px;margin-top:4px}
+.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:1.8px;color:#8b5cf6;font-weight:900}
+h1{font-size:clamp(28px,5vw,42px);letter-spacing:-1.5px;margin:8px 0;color:#24244f}h2{font-size:22px;margin:0 0 8px;color:#292954}p{line-height:1.5;color:#667085}
+.page{display:none}.page.active{display:block}.login-card{max-width:460px;margin:6vh auto;background:#fff;border:1px solid #e0e4f6;border-radius:24px;padding:26px;box-shadow:0 20px 55px #5145cd18}
+.logo{width:62px;height:62px;background:linear-gradient(135deg,#635bff,#ff5da2);color:white;border:0;border-radius:19px;display:grid;place-items:center;font-size:27px;font-weight:900;margin-bottom:22px;box-shadow:0 8px 20px #635bff35}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.tile{background:var(--card);border:1px solid #e0e5f6;border-radius:19px;padding:18px;min-height:160px;display:flex;flex-direction:column;align-items:flex-start;transition:.18s;box-shadow:0 8px 22px #3730a308}
+.tile:nth-child(6n+1){border-top:4px solid #ff5da2}.tile:nth-child(6n+2){border-top:4px solid #635bff}.tile:nth-child(6n+3){border-top:4px solid #10b981}.tile:nth-child(6n+4){border-top:4px solid #f59e0b}.tile:nth-child(6n+5){border-top:4px solid #3b82f6}.tile:nth-child(6n){border-top:4px solid #a855f7}
+.tile:hover{border-color:#b8b3ff;transform:translateY(-3px);box-shadow:0 12px 28px #5145cd18}.tile .ico{font-size:23px;border:0;background:linear-gradient(135deg,#f1efff,#ffeaf3);width:44px;height:44px;display:grid;place-items:center;border-radius:13px;margin-bottom:14px}
+.tile h3{font-size:17px;margin:0 0 6px;color:#292954}.tile p{font-size:13px;margin:0 0 14px}.tile button{margin-top:auto}
+.panel{background:#fff;border:1px solid #e0e5f6;border-radius:19px;padding:20px;margin:16px 0;box-shadow:0 8px 24px #3730a308}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1;min-width:130px}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.stat{border:1px solid #e0e5f6;background:linear-gradient(145deg,#fff,#f7f6ff);border-radius:15px;padding:14px}.stat:nth-child(2){background:linear-gradient(145deg,#fff,#fff1f7)}.stat:nth-child(3){background:linear-gradient(145deg,#fff,#effcf7)}.stat b{font-size:24px;display:block;color:#5145cd}.stat span{font-size:12px;color:#667085}
+.barline{display:grid;grid-template-columns:105px 1fr 42px;gap:10px;align-items:center;margin:14px 0;font-size:13px}.track{height:11px;background:#edf0ff;border-radius:20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#635bff,#ff5da2,#10b981);border-radius:20px}
+.question{border:1px solid #e0e5f6;border-radius:16px;padding:17px;margin:14px 0;background:#fff;box-shadow:0 5px 16px #3730a306}.qtop{display:flex;justify-content:space-between;gap:10px;color:#7a819b;font-size:12px;margin-bottom:12px}.option{display:block;width:100%;text-align:left;margin:8px 0;background:#fff;color:#292954;border:1px solid #dce2f5;font-weight:600;box-shadow:none}.option:hover{background:#f5f3ff;border-color:#aaa4ff}.option.correct{background:#e9fbf3;border:2px solid #10b981;color:#08764e}.option.wrong{background:#fff0f4;border:2px solid #ff5da2;color:#a51c56;text-decoration:line-through}.feedback{background:#f0fdf7;border:1px solid #c8f3df;border-radius:11px;padding:12px;margin-top:10px;color:#176044;font-size:14px}
+.notice{background:linear-gradient(100deg,#f2efff,#fff1f7);border-left:4px solid #8b5cf6;padding:12px 14px;border-radius:8px;color:#51456d;font-size:13px;line-height:1.5}
+.pdfrow{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e0e5f6;border-radius:14px;padding:14px;margin:10px 0;background:#fff}.pdfrow div{min-width:0}.pdfrow strong{display:block;overflow-wrap:anywhere;color:#292954}.pdfrow small{color:#667085}
+iframe{width:100%;height:65vh;border:1px solid #dce2f5;border-radius:12px;background:#fff}
+footer{text-align:center;color:#7a819b;font-size:12px;padding:25px 0 8px}.hidden{display:none!important}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.statrow{grid-template-columns:repeat(3,1fr)}.shell{padding:14px}.topbar{align-items:flex-start}.barline{grid-template-columns:82px 1fr 34px}.login-card{margin:3vh auto}.pdfrow{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.statrow{grid-template-columns:repeat(3,1fr)}.shell{padding:14px}.topbar{align-items:flex-start}.barline{grid-template-columns:82px 1fr 34px}.login-card{margin:3vh auto}.pdfrow{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <div class="brand">KMC ENTRANCE PREP <small>Created by Niraj Yadav</small></div>
+  <button id="logoutBtn" class="secondary hidden" onclick="logout()">Log out</button>
+</header>
+
+<section id="loginPage" class="page active">
+  <div class="login-card">
+    <div class="logo">K</div>
+    <div class="eyebrow">Your study dashboard</div>
+    <h1>Prepare with purpose.</h1>
+    <p>Sign in to open your personal practice space for KMC entrance, scholarship preparation and SEE revision.</p>
+    <label>Student name<input id="studentName" placeholder="Enter your name" autocomplete="name"></label>
+    <label>Class
+      <select id="studentClass"><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select>
+    </label>
+    <label>Passcode (optional)<input id="passcode" type="password" placeholder="Optional demo passcode"></label>
+    <button style="width:100%;margin-top:8px" onclick="login()">Log in →</button>
+    <p class="notice" style="margin-top:15px">Demo login only: this version does not verify an account, send SMS OTP, or upload your details to a server. Use a nickname if preferred. Your progress is saved in this browser on this device.</p>
+  </div>
+</section>
+
+<section id="welcomePage" class="page">
+  <div class="panel" style="padding:28px">
+    <div class="eyebrow">Welcome to your study space</div>
+    <h1 id="welcomeTitle">Welcome to KMC Entrance Prep</h1>
+    <p>Build consistency with daily MCQs, revise your PDFs, and review your weak subjects.</p>
+    <button onclick="showPage('dashboardPage')">Open my dashboard →</button>
+  </div>
+</section>
+
+<section id="dashboardPage" class="page">
+  <div class="eyebrow">Student dashboard</div>
+  <h1 id="dashTitle">Let's practice.</h1>
+  <p>Choose what you want to work on today.</p>
+  <div class="statrow">
+    <div class="stat"><b id="todayCount">0</b><span>Questions answered</span></div>
+    <div class="stat"><b id="accuracy">0%</b><span>Overall accuracy</span></div>
+    <div class="stat"><b id="streak">0</b><span>Practice days</span></div>
+  </div>
+  <div class="grid">
+    <div class="tile"><div class="ico">🏆</div><h3>GK Quiz Competition</h3><p>Nepal GK and general quiz practice.</p><button onclick="openQuiz('GK / IQ')">Start GK quiz</button></div>
+    <div class="tile"><div class="ico">✦</div><h3>Daily Mixed MCQs</h3><p>Mixed entrance questions with explanations and feedback.</p><button onclick="openQuiz('Mixed')">Daily practice</button></div>
+    <div class="tile"><div class="ico">📚</div><h3>Subject-wise MCQs</h3><p>Choose a subject and practise its available MCQs.</p><button onclick="showPage('subjectPage')">Choose subject</button></div>
+    <div class="tile"><div class="ico">🧪</div><h3>Science Chapter-wise MCQs</h3><p>Pick a Class 10 Science chapter and practise repeatedly.</p><button onclick="showPage('scienceChapterPage')">Choose chapter</button></div>
+    <div class="tile"><div class="ico">▤</div><h3>SEE Past-Year Questions</h3><p>Open the PDFs included in this app package. No external website links.</p><button onclick="showPage('pdfPage')">Open my PDFs</button></div>
+    <div class="tile"><div class="ico">↺</div><h3>My Mistake List</h3><p>Review questions you answered incorrectly, with solutions.</p><button onclick="showMistakes()">Review mistakes</button></div>
+    <div class="tile"><div class="ico">▥</div><h3>My Subject Progress</h3><p>View your accuracy by subject as a bar chart.</p><button onclick="showProgress()">View progress</button></div>
+    <div class="tile"><div class="ico">◷</div><h3>Weekly Test</h3><p>Choose question count and time limit for a mixed mock test.</p><button onclick="showPage('weeklyPage')">Set up test</button></div>
+  </div>
+</section>
+
+<section id="subjectPage" class="page">
+  <div class="row"><div><div class="eyebrow">Targeted practice</div><h1>Subject-wise MCQs</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div class="panel">
+    <p>Choose a subject, set a question count, and start practice with answer feedback and explanations.</p>
+    <label>Choose subject<select id="subjectPick"><option>Mathematics</option><option>Science</option><option>English</option><option>Nepali</option><option>Social Studies</option><option>Computer</option><option>GK / IQ</option></select></label>
+    <label>Questions per session<select id="subjectCount"><option>20</option><option>30</option><option selected>40</option><option>50</option></select></label>
+    <button onclick="startSubjectWise()">Start subject MCQs →</button>
+    <div class="notice" style="margin-top:14px">The number selected is your session size. The current built-in question bank is a starter bank, so it does not yet contain 20–50 unique questions for every subject.</div>
+  </div>
+</section>
+
+<section id="scienceChapterPage" class="page">
+  <div class="row"><div><div class="eyebrow">SEE Science practice</div><h1>Science Chapter-wise MCQs</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div class="panel">
+    <p>Choose from the 19 chapters of Nepal's Class 10 Science and Technology curriculum. You can repeat practice sessions as often as you like.</p>
+    <label>Science chapter<select id="scienceChapter">
+      <option value="1. Scientific Learning">1. Scientific Learning</option>
+      <option value="2. Classification of Living Beings">2. Classification of Living Beings</option>
+      <option value="3. Honey Bee">3. Honey Bee</option>
+      <option value="4. Heredity">4. Heredity</option>
+      <option value="5. Physiological Structure and Life Process">5. Physiological Structure and Life Process</option>
+      <option value="6. Nature and Environment">6. Nature and Environment</option>
+      <option value="7. Motion and Force">7. Motion and Force</option>
+      <option value="8. Pressure">8. Pressure</option>
+      <option value="9. Heat">9. Heat</option>
+      <option value="10. Wave">10. Wave</option>
+      <option value="11. Electricity and Magnetism">11. Electricity and Magnetism</option>
+      <option value="12. Universe">12. Universe</option>
+      <option value="13. Information and Communication Technology (ICT)">13. Information and Communication Technology (ICT)</option>
+      <option value="14. Classification of Elements">14. Classification of Elements</option>
+      <option value="15. Chemical Reaction">15. Chemical Reaction</option>
+      <option value="16. Gases">16. Gases</option>
+      <option value="17. Metals and Non-metals">17. Metals and Non-metals</option>
+      <option value="18. Hydrocarbons and their Compounds">18. Hydrocarbons and their Compounds</option>
+      <option value="19. Chemicals Used in Daily Life">19. Chemicals Used in Daily Life</option>
+    </select></label>
+    <label>Questions per session<select id="scienceCount"><option>10</option><option>20</option><option>30</option><option selected>40</option><option>50</option></select></label>
+    <button onclick="startScienceChapter()">Start chapter MCQs →</button>
+    <div class="notice" style="margin-top:14px">Chapter list follows the Nepal CDC Class 10 Science and Technology textbook. This starter version has one sample MCQ per chapter; repeat sessions are unlimited, but unique questions are not yet unlimited.</div>
+  </div>
+</section>
+
+<section id="quizPage" class="page">
+  <div class="row"><div><div class="eyebrow">Practice mode</div><h1 id="quizTitle">Practice MCQs</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div class="panel">
+    <div class="row">
+      <label>Subject<select id="quizSubject"><option>Mixed</option><option>GK / IQ</option><option>Mathematics</option><option>Science</option><option>English</option><option>Nepali</option><option>Social Studies</option><option>Computer</option></select></label>
+      <label>Number of questions<select id="qCount"><option>20</option><option>30</option><option selected>40</option><option>50</option></select></label>
+    </div>
+    <button onclick="startQuiz()">Start practice</button>
+    <div id="quizArea"></div>
+  </div>
+</section>
+
+<section id="pdfPage" class="page">
+  <div class="row"><div><div class="eyebrow">Your study files</div><h1>SEE past-year PDFs</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <p>These are the two PDFs you provided, included in the downloadable app package. They open from the package folder and do not link to websites.</p>
+  <div class="notice">For the PDF buttons to work, unzip the downloaded package and keep the HTML file and both PDF files together in the same folder.</div>
+  <div class="pdfrow"><div><strong>SEE PDF 1</strong><small>Kaagaz_20261009_08474876115 (1).pdf</small></div><button onclick="openPdf('Kaagaz_20261009_08474876115 (1).pdf')">Open PDF</button></div>
+  <div class="pdfrow"><div><strong>SEE PDF 2</strong><small>Kaagaz_20261009_085804448853 (1) (1).pdf</small></div><button onclick="openPdf('Kaagaz_20261009_085804448853 (1) (1).pdf')">Open PDF</button></div>
+  <div id="pdfViewer" class="hidden"><h2 id="pdfName"></h2><iframe id="pdfFrame" title="SEE past-year PDF"></iframe></div>
+  <div class="panel"><h2>Add another PDF on this device</h2><p>Choose a PDF file to open it temporarily in this session.</p><input type="file" id="extraPdf" accept="application/pdf" onchange="openLocalPdf(event)"></div>
+</section>
+
+<section id="mistakePage" class="page">
+  <div class="row"><div><div class="eyebrow">Learn from errors</div><h1>My mistake list</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div id="mistakeList"></div>
+</section>
+
+<section id="progressPage" class="page">
+  <div class="row"><div><div class="eyebrow">Your results</div><h1>Subject progress</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div class="panel"><p>Accuracy is calculated from your answers in this browser. A subject will appear after you answer questions from it.</p><div id="chart"></div></div>
+</section>
+
+<section id="weeklyPage" class="page">
+  <div class="row"><div><div class="eyebrow">Weekly mixed mock</div><h1>Set your test</h1></div><button class="secondary" onclick="showPage('dashboardPage')">← Dashboard</button></div>
+  <div class="panel">
+    <label>Number of questions<select id="weeklyCount"><option>10</option><option>20</option><option selected>30</option><option>40</option><option>50</option></select></label>
+    <label>Time limit<select id="weeklyTime"><option value="15">15 minutes</option><option value="30" selected>30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option><option value="90">90 minutes</option></select></label>
+    <label>Reminder preference<select id="reminder"><option value="off">No reminder</option><option value="sunday">Sunday — in-app reminder</option><option value="saturday">Saturday — in-app reminder</option></select></label>
+    <button onclick="startWeekly()">Start weekly test</button>
+    <p class="notice">Reminder preference is saved in this browser, but this offline app cannot send notifications while it is closed.</p>
+    <div id="weeklyArea"></div>
+  </div>
+</section>
+
+<footer>KMC Entrance Prep · Created by Niraj Yadav · Offline demo version</footer>
+</div>
+<script>
+const SCIENCE_CHAPTER_BANK = [
+{subject:"Science",chapter:"Scientific Learning",q:"Which variable is deliberately changed in an experiment?",opts:["Dependent variable", "Independent variable", "Controlled variable", "Constant"],a:1,exp:"The independent variable is deliberately changed by the investigator."},
+{subject:"Science",chapter:"Classification of Living Beings",q:"Which group contains organisms that make their own food by photosynthesis?",opts:["Fungi", "Green plants", "Most animals", "Viruses"],a:1,exp:"Green plants commonly make food through photosynthesis."},
+{subject:"Science",chapter:"Honey Bee",q:"What is the main reproductive female in a honey-bee colony called?",opts:["Worker", "Drone", "Queen", "Larva"],a:2,exp:"The queen is the principal reproductive female in the colony."},
+{subject:"Science",chapter:"Heredity",q:"What is a gene?",opts:["A unit of heredity", "A type of blood cell", "A digestive enzyme", "A body organ"],a:0,exp:"A gene is a DNA sequence that contributes to hereditary traits."},
+{subject:"Science",chapter:"Physiological Structure and Life Process",q:"Which chamber of the human heart pumps oxygenated blood to the body?",opts:["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],a:3,exp:"The left ventricle pumps oxygenated blood into the aorta."},
+{subject:"Science",chapter:"Nature and Environment",q:"Which organisms are primary producers in most land ecosystems?",opts:["Green plants", "Carnivores", "Herbivores", "Parasites"],a:0,exp:"Green plants convert light energy into chemical energy."},
+{subject:"Science",chapter:"Motion and Force",q:"What is the SI unit of force?",opts:["Joule", "Newton", "Watt", "Pascal"],a:1,exp:"Force is measured in newtons (N)."},
+{subject:"Science",chapter:"Pressure",q:"Pressure is calculated as:",opts:["Force × area", "Force ÷ area", "Area ÷ force", "Mass × volume"],a:1,exp:"Pressure equals the perpendicular force divided by the area."},
+{subject:"Science",chapter:"Heat",q:"Heat naturally flows from:",opts:["Colder body to hotter body", "Lower mass to higher mass only", "Hotter body to colder body", "Smaller object to larger object only"],a:2,exp:"Thermal energy transfers spontaneously from higher to lower temperature."},
+{subject:"Science",chapter:"Wave",q:"Which quantity is measured in hertz?",opts:["Wavelength", "Frequency", "Amplitude", "Wave speed"],a:1,exp:"Frequency is measured in hertz (Hz)."},
+{subject:"Science",chapter:"Electricity and Magnetism",q:"What is the SI unit of electric current?",opts:["Volt", "Ohm", "Ampere", "Watt"],a:2,exp:"Electric current is measured in amperes (A)."},
+{subject:"Science",chapter:"Universe",q:"Which theory explains the early expansion of the universe?",opts:["Cell theory", "Big Bang theory", "Germ theory", "Atomic theory"],a:1,exp:"The Big Bang model describes the universe evolving from an early hot, dense state."},
+{subject:"Science",chapter:"Information and Communication Technology (ICT)",q:"What does ICT stand for?",opts:["Information and Communication Technology", "Internet Computer Transfer", "Integrated Circuit Tool", "Information Control Technique"],a:0,exp:"ICT means Information and Communication Technology."},
+{subject:"Science",chapter:"Classification of Elements",q:"Elements in the same modern periodic-table group often have similar:",opts:["Number of shells only", "Chemical properties", "Atomic masses exactly", "Numbers of neutrons"],a:1,exp:"Elements in a group have similar outer-electron arrangements and often similar chemical properties."},
+{subject:"Science",chapter:"Chemical Reaction",q:"A balanced chemical equation follows the law of conservation of:",opts:["Temperature", "Mass", "Pressure", "Volume in every reaction"],a:1,exp:"Atoms are conserved, so total mass is conserved in a chemical reaction."},
+{subject:"Science",chapter:"Gases",q:"Which gas is commonly produced when a reactive metal reacts with a dilute acid?",opts:["Hydrogen", "Oxygen", "Nitrogen", "Carbon dioxide in every case"],a:0,exp:"A reactive metal and dilute acid commonly produce a salt and hydrogen gas."},
+{subject:"Science",chapter:"Metals and Non-metals",q:"Which property is typical of most metals?",opts:["Brittleness", "Poor electrical conductivity", "Malleability", "No lustre"],a:2,exp:"Most metals can be hammered into sheets; this property is called malleability."},
+{subject:"Science",chapter:"Hydrocarbons and their Compounds",q:"Hydrocarbons contain which elements only?",opts:["Carbon and oxygen", "Hydrogen and oxygen", "Carbon and hydrogen", "Carbon and nitrogen"],a:2,exp:"Hydrocarbons are compounds containing only carbon and hydrogen."},
+{subject:"Science",chapter:"Chemicals Used in Daily Life",q:"Which should be followed when using household cleaning chemicals?",opts:["Mix all cleaners together", "Ignore label instructions", "Follow the product label and safety directions", "Store them in drink bottles"],a:2,exp:"Follow label directions and never mix cleaning products unless the label specifically permits it."}
+];
+const BANK=[
+{subject:"GK / IQ",q:"What is the capital city of Nepal?",opts:["Pokhara","Kathmandu","Biratnagar","Janakpur"],a:1,exp:"Kathmandu is the capital city of Nepal."},
+{subject:"GK / IQ",q:"Which is the highest mountain in the world?",opts:["Kangchenjunga","K2","Mount Everest","Annapurna I"],a:2,exp:"Mount Everest is the world's highest mountain above sea level."},
+{subject:"GK / IQ",q:"What is the national flower of Nepal?",opts:["Rose","Laligurans (rhododendron)","Lotus","Sunflower"],a:1,exp:"Laligurans, the rhododendron, is Nepal's national flower."},
+{subject:"GK / IQ",q:"Which is the longest river in Nepal?",opts:["Bagmati","Karnali","Rapti","Kamala"],a:1,exp:"The Karnali is commonly identified as Nepal's longest river system."},
+{subject:"GK / IQ",q:"How many provinces are there in Nepal?",opts:["5","6","7","8"],a:2,exp:"Nepal has seven provinces."},
+{subject:"Mathematics",q:"If 3x + 5 = 20, find x.",opts:["3","5","7","15"],a:1,exp:"3x = 20 − 5 = 15, so x = 15 ÷ 3 = 5."},
+{subject:"Mathematics",q:"What is the value of (a + b)²?",opts:["a² + b²","a² + 2ab + b²","a² − 2ab + b²","2a + 2b"],a:1,exp:"Use the identity (a + b)² = a² + 2ab + b²."},
+{subject:"Science",q:"Which organelle is known as the powerhouse of the cell?",opts:["Nucleus","Ribosome","Mitochondrion","Vacuole"],a:2,exp:"Mitochondria produce much of the ATP used by the cell."},
+{subject:"Science",q:"What is the SI unit of force?",opts:["Joule","Watt","Newton","Pascal"],a:2,exp:"Force is measured in newtons (N)."},
+{subject:"English",q:"Choose the correct plural of “child”.",opts:["Childs","Childes","Children","Childrens"],a:2,exp:"The irregular plural of child is children."},
+{subject:"Nepali",q:"‘विद्यालय’ शब्दको सामान्य अर्थ कुन हो?",opts:["अस्पताल","पढ्ने ठाउँ","बजार","कार्यालय"],a:1,exp:"विद्यालय भनेको पढ्ने र सिक्ने ठाउँ हो।"},
+{subject:"Social Studies",q:"Which document is the supreme law of Nepal?",opts:["Civil Code","Constitution","Local notice","School rule"],a:1,exp:"The Constitution of Nepal is the country's supreme law."},
+{subject:"Computer",q:"What does CPU stand for?",opts:["Central Processing Unit","Computer Personal Unit","Control Program Utility","Central Power User"],a:0,exp:"CPU stands for Central Processing Unit."}
+];
+let profile={},answers=[],currentSet=[],cursor=0,correctCount=0,quizMode="practice",timerId=null,secondsLeft=0;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='dashboardPage')refreshStats();}
+function login(){let name=document.getElementById('studentName').value.trim();if(!name){alert('Please enter your name or a nickname.');return;}profile={name,cls:document.getElementById('studentClass').value};localStorage.setItem('kmcProfile',JSON.stringify(profile));document.getElementById('welcomeTitle').textContent='Welcome to KMC Entrance Prep, '+name+'!';document.getElementById('dashTitle').textContent='Ready to learn, '+name+'?';document.getElementById('logoutBtn').classList.remove('hidden');showPage('welcomePage');}
+function logout(){showPage('loginPage');document.getElementById('logoutBtn').classList.add('hidden');}
+function stats(){return JSON.parse(localStorage.getItem('kmcStats')||'{"total":0,"correct":0,"subjects":{},"mistakes":[],"days":[]}');}
+function saveStats(s){localStorage.setItem('kmcStats',JSON.stringify(s));}
+function refreshStats(){let s=stats();document.getElementById('todayCount').textContent=s.total;document.getElementById('accuracy').textContent=(s.total?Math.round(100*s.correct/s.total):0)+'%';document.getElementById('streak').textContent=s.days.length;}
+function openQuiz(sub){document.getElementById('quizSubject').value=sub;document.getElementById('quizTitle').textContent=sub==='Mixed'?'Daily Mixed MCQs':sub+' Quiz';document.getElementById('quizArea').innerHTML='';showPage('quizPage');}
+function startSubjectWise(){const sub=document.getElementById('subjectPick').value;document.getElementById('quizSubject').value=sub;document.getElementById('qCount').value=document.getElementById('subjectCount').value;document.getElementById('quizTitle').textContent=sub+' — Subject-wise MCQs';document.getElementById('quizArea').innerHTML='';showPage('quizPage');startQuiz();}
+function startScienceChapter(){const chapter=document.getElementById('scienceChapter').value;const n=+document.getElementById('scienceCount').value;clearInterval(timerId);quizMode='practice';currentSet=SCIENCE_CHAPTER_BANK.filter(q=>q.chapter===chapter).slice();if(!currentSet.length){document.getElementById('quizArea').innerHTML='<div class="notice">No questions are available for this chapter in the current starter bank yet.</div>';document.getElementById('quizTitle').textContent=chapter+' MCQs';showPage('quizPage');return;}currentSet=currentSet.sort(()=>Math.random()-.5).slice(0,n);cursor=0;correctCount=0;answers=[];document.getElementById('quizTitle').textContent=chapter+' MCQs';document.getElementById('quizArea').innerHTML='';showPage('quizPage');renderQuestion();}
+function startQuiz(){clearInterval(timerId);quizMode='practice';let sub=document.getElementById('quizSubject').value,n=+document.getElementById('qCount').value;currentSet=(sub==='Mixed'?BANK.concat(SCIENCE_CHAPTER_BANK):sub==='Science'?BANK.filter(q=>q.subject===sub).concat(SCIENCE_CHAPTER_BANK):BANK.filter(q=>q.subject===sub)).slice();if(!currentSet.length){document.getElementById('quizArea').innerHTML='<div class="notice">There are no starter questions for this subject yet. Add questions from your verified study materials to expand the bank.</div>';return;}currentSet=currentSet.sort(()=>Math.random()-.5).slice(0,n);cursor=0;correctCount=0;answers=[];renderQuestion();}
+function renderQuestion(){let area=document.getElementById('quizArea');if(cursor>=currentSet.length){finishQuiz();return;}let q=currentSet[cursor];area.innerHTML=`<div class="question"><div class="qtop"><span>Question ${cursor+1} of ${currentSet.length}</span><span>${esc(q.subject)}</span></div><h3>${esc(q.q)}</h3><div id="opts">${q.opts.map((o,i)=>`<button class="option" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${esc(o)}</button>`).join('')}</div><div id="feed"></div><button id="nextBtn" class="hidden" onclick="cursor++;renderQuestion()">Next question →</button></div>`;}
+function answer(i){let q=currentSet[cursor],ok=i===q.a;if(document.getElementById('feed').innerHTML)return;if(ok)correctCount++;let s=stats();s.total++;if(ok)s.correct++;s.subjects[q.subject]=s.subjects[q.subject]||{total:0,correct:0};s.subjects[q.subject].total++;if(ok)s.subjects[q.subject].correct++;let day=new Date().toISOString().slice(0,10);if(!s.days.includes(day))s.days.push(day);if(!ok){s.mistakes.unshift({q:q.q,subject:q.subject,chosen:q.opts[i],answer:q.opts[q.a],exp:q.exp,date:day});s.mistakes=s.mistakes.slice(0,200);}saveStats(s);document.querySelectorAll('#opts button').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===i&&!ok)b.classList.add('wrong')});document.getElementById('feed').innerHTML=`<div class="feedback"><b>${ok?'Correct!':'Not quite.'}</b><br>Answer: ${esc(q.opts[q.a])}<br>${esc(q.exp)}</div>`;document.getElementById('nextBtn').classList.remove('hidden');}
+function finishQuiz(){let area=document.getElementById('quizArea');area.innerHTML=`<div class="panel"><div class="eyebrow">Practice complete</div><h2>Score: ${correctCount} / ${currentSet.length}</h2><p>Accuracy: ${Math.round(correctCount/currentSet.length*100)}%</p><button onclick="startQuiz()">Try again</button> <button class="secondary" onclick="showPage('dashboardPage')">Dashboard</button></div>`;refreshStats();}
+function showMistakes(){let s=stats(),el=document.getElementById('mistakeList');el.innerHTML=s.mistakes.length?s.mistakes.map((m,i)=>`<div class="question"><div class="qtop"><span>${esc(m.subject)}</span><span>${esc(m.date)}</span></div><h3>${esc(m.q)}</h3><p>Your answer: ${esc(m.chosen)}</p><p><b>Correct answer:</b> ${esc(m.answer)}</p><div class="feedback">${esc(m.exp)}</div></div>`).join(''):'<div class="panel"><h2>No mistakes saved yet</h2><p>Answer some practice questions. Any incorrect answer will be saved here with its explanation.</p></div>';showPage('mistakePage');}
+function showProgress(){let s=stats(),el=document.getElementById('chart'),entries=Object.entries(s.subjects);el.innerHTML=entries.length?entries.map(([name,v])=>{let pct=Math.round(100*v.correct/v.total);return `<div class="barline"><span>${esc(name)}</span><div class="track"><div class="fill" style="width:${pct}%"></div></div><b>${pct}%</b></div><small>${v.correct} correct out of ${v.total}</small>`}).join('<hr style="border:0;border-top:1px solid #eee;margin:12px 0">'):'<p>No subject results yet. Complete some MCQs to generate your chart.</p>';showPage('progressPage');}
+function startWeekly(){localStorage.setItem('kmcReminder',document.getElementById('reminder').value);quizMode='weekly';let n=+document.getElementById('weeklyCount').value;currentSet=BANK.slice().sort(()=>Math.random()-.5).slice(0,Math.min(n,BANK.length));cursor=0;correctCount=0;secondsLeft=+document.getElementById('weeklyTime').value*60;renderWeekly();}
+function renderWeekly(){clearInterval(timerId);let area=document.getElementById('weeklyArea');area.innerHTML=`<div class="notice">Questions available in this demo bank: ${currentSet.length}. Your selected test duration is ${document.getElementById('weeklyTime').value} minutes.</div><div id="weeklyClock" style="font-weight:800;font-size:20px;margin:15px 0"></div><div id="weeklyQuestion"></div>`;drawWeeklyQuestion();timerId=setInterval(()=>{secondsLeft--;let c=document.getElementById('weeklyClock');if(c)c.textContent='Time left: '+Math.floor(secondsLeft/60)+':'+String(secondsLeft%60).padStart(2,'0');if(secondsLeft<=0){clearInterval(timerId);finishWeekly(true);}},1000);}
+function drawWeeklyQuestion(){let box=document.getElementById('weeklyQuestion');if(!box)return;if(cursor>=currentSet.length){finishWeekly(false);return;}let q=currentSet[cursor];box.innerHTML=`<div class="question"><div class="qtop"><span>Question ${cursor+1} of ${currentSet.length}</span><span>${esc(q.subject)}</span></div><h3>${esc(q.q)}</h3>${q.opts.map((o,i)=>`<button class="option" onclick="weeklyAnswer(${i})">${String.fromCharCode(65+i)}. ${esc(o)}</button>`).join('')}</div>`;}
+function weeklyAnswer(i){let q=currentSet[cursor];if(i===q.a)correctCount++;let s=stats();s.total++;s.subjects[q.subject]=s.subjects[q.subject]||{total:0,correct:0};s.subjects[q.subject].total++;if(i===q.a){s.correct++;s.subjects[q.subject].correct++;}else{s.mistakes.unshift({q:q.q,subject:q.subject,chosen:q.opts[i],answer:q.opts[q.a],exp:q.exp,date:new Date().toISOString().slice(0,10)});}let day=new Date().toISOString().slice(0,10);if(!s.days.includes(day))s.days.push(day);saveStats(s);cursor++;drawWeeklyQuestion();}
+function finishWeekly(timeout){clearInterval(timerId);document.getElementById('weeklyArea').innerHTML=`<div class="panel"><h2>${timeout?'Time is up':'Weekly test complete'}</h2><p>Score: <b>${correctCount} / ${currentSet.length}</b></p><p>Accuracy: ${Math.round(correctCount/currentSet.length*100)}%</p><button onclick="showPage('dashboardPage')">Back to dashboard</button></div>`;refreshStats();}
+function openPdf(name){document.getElementById('pdfName').textContent=name;document.getElementById('pdfFrame').src=encodeURI(name);document.getElementById('pdfViewer').classList.remove('hidden');document.getElementById('pdfViewer').scrollIntoView({behavior:'smooth'});}
+let localPdfUrl=null;function openLocalPdf(e){let f=e.target.files[0];if(!f)return;if(localPdfUrl)URL.revokeObjectURL(localPdfUrl);localPdfUrl=URL.createObjectURL(f);document.getElementById('pdfName').textContent=f.name;document.getElementById('pdfFrame').src=localPdfUrl;document.getElementById('pdfViewer').classList.remove('hidden');}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+try{let p=JSON.parse(localStorage.getItem('kmcProfile')||'null');if(p&&p.name){profile=p;document.getElementById('studentName').value=p.name;document.getElementById('studentClass').value=p.cls||'10';document.getElementById('welcomeTitle').textContent='Welcome to KMC Entrance Prep, '+p.name+'!';document.getElementById('dashTitle').textContent='Ready to learn, '+p.name+'?';document.getElementById('logoutBtn').classList.remove('hidden');showPage('dashboardPage');}}catch(e){}
+</script>
+</body>
+</html>
